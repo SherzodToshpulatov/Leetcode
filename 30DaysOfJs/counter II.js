@@ -1,21 +1,21 @@
+// https://leetcode.com/problems/counter-ii/description/?envType=study-plan-v2&envId=30-days-of-javascript
+
 /**
  * @param {integer} init
  * @return { increment: Function, decrement: Function, reset: Function }
  */
 var createCounter = function(init) {
-    let counter = init
     let object = {
-
-        increment: function() {
-            return ++ counter
+        increment: function(arg) {
+            return arg ++
 
         },
-        decrement: function() {
-            return -- counter
+        decrement: function(arg) {
+            return arg --
         },
 
-        reset: function() {
-            return counter = init
+        reset: function(arg) {
+            return arg
         }
     };
     return object
