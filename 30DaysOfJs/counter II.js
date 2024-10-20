@@ -5,17 +5,19 @@
  * @return { increment: Function, decrement: Function, reset: Function }
  */
 var createCounter = function(init) {
+    let counter = init
     let object = {
-        increment: function(arg) {
-            return arg ++
+
+        increment: function() {
+            return ++ counter
 
         },
-        decrement: function(arg) {
-            return arg --
+        decrement: function() {
+            return -- counter
         },
 
-        reset: function(arg) {
-            return arg
+        reset: function() {
+            return counter = init
         }
     };
     return object

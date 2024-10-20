@@ -1,29 +1,34 @@
+// https://leetcode.com/problems/to-be-or-not-to-be/description/?envType=study-plan-v2&envId=30-days-of-javascript
+
 /**
- * @param {integer} init
- * @return { increment: Function, decrement: Function, reset: Function }
+ * @param {string} val
+ * @return {Object}
  */
-var createCounter = function(init) {
-    let counter = init
+var expect = function(val) {
     let object = {
-
-        increment: function() {
-            return ++ counter
-
+        toBe: function(arg1) {
+            if (val === arg1)
+            {
+                return true
+            }
+            else{
+               throw new Error("Not Equal");
+            }
         },
-        decrement: function() {
-            return -- counter
-        },
-
-        reset: function() {
-            return counter = init
+        notToBe: function(arg2) {
+            if (val !== arg2)
+            {
+                return true
+            }
+            else{
+               throw new Error("Equal");
+            }
         }
     };
     return object
 };
 
 /**
- * const counter = createCounter(5)
- * counter.increment(); // 6
- * counter.reset(); // 5
- * counter.decrement(); // 4
+ * expect(5).toBe(5); // true
+ * expect(5).notToBe(5); // throws "Equal"
  */
